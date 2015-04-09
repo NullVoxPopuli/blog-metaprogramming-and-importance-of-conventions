@@ -3,9 +3,6 @@ require '../examples'
 class << self
   # this turns ruby in to a bare words langugae
   def method_missing(*args)
-    # don't infinite loop
-    return if caller.first.include?('method_missing')
-
     args.join(" ")
   end
 end
