@@ -7,13 +7,13 @@ source 'https://rubygems.org'
 
 # A few helpers for manipulating methods on an instance of an object.
 # https://github.com/NullVoxPopuli/MetaInstance
-gem 'meta_instance'
+# gem 'meta_instance'
 
 # Provides a subclass of Hash and a wrapper around Rails' serialize
 # attribute for object-like access to hashes without validating existence
 # of nested hashes
 # https://github.com/NullVoxPopuli/MetaHash
-gem 'metahash-rb', require: 'metahash'
+# gem 'metahash-rb', require: 'metahash'
 
 
 
