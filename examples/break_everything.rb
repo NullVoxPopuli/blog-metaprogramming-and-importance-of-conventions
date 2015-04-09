@@ -7,7 +7,6 @@ class << self
   end
 end
 
-wat
 
 print_header('Lets Break Everything')
 puts "overriding method_missing on the object level is generally a bad idea\n\n"
