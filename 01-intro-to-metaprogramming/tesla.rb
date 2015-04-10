@@ -1,0 +1,6 @@
+class Tesla < Car2
+  FEATURES = [
+    WHEELS, WINDOWS, AIR_CONDITIONING,
+    TURBO, MOON_ROOF, TOUCH_SCREEN
+  ]
+end

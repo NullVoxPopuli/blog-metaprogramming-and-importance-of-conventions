@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 #
 # ruby '2.2.0'
 
+# String extensions, other object extensions
+gem "activesupport", require: "active_support/all"
 
 # prettily formats and colors objects
 # https://github.com/michaeldv/awesome_print
