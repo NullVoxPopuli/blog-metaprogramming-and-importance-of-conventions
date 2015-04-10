@@ -12,3 +12,19 @@ def print_header(title)
   puts divider.purple
   puts "\n\n"
 end
+
+def assert_true(value)
+  if value
+    puts value.to_s.green
+  else
+    puts value.to_s.red
+  end
+end
+
+def assert_false(value)
+  if !value
+    puts value.to_s.green
+  else
+    puts value.to_s.red
+  end
+end

@@ -1,20 +1,21 @@
 class Car
   include Features
 
-  # iterate through all of the features
-  ALL_FEATURES.each do |feature|
-    # the feature is written as english,
-    # convert to valid method name syntax.
-    # see: http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html
-    method_base_name = feature.underscore.gsub(' ', '_')
+  def method_missing(name, *args, &block)
+    # does the method match the has_feature? format
+    if name.to_s =~ /has_(.+)\?/
+      # get the value from the regex capture
+      feature_name = $1
 
-    method_name = "has_#{method_base_name}?"
+      # The features array is of symbols
+      constant_value = feature_name.to_sym
 
-    # define the method that checks if this model of car has the
-    # requested feature.
-    # see: http://ruby-doc.org/core-2.2.0/Module.html#method-i-define_method
-    define_method method_name do
-      FEATURES.include?(feature)
+      # use our current class, self, rather than Car
+      # without self.class, FEATURES is assumed to be in Car,
+      # rather than in the instance that inherits from Car
+      return self.class::FEATURES.include?(constant_value)
+    else
+      super
     end
   end
 end

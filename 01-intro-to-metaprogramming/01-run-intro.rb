@@ -1,19 +1,21 @@
 require '../examples'
-require 'features'
-require 'car'
-require 'car2'
-require 'delorean'
-require 'tesla'
+require './features'
+require './car'
+require './delorean'
+require './tesla'
 
+puts "For the DeLorean".yellow
 best_car = DeLorean.new
-puts best_car.has_moon_roof? # false
-puts best_car.has_flux_capacitor? # true
-puts best_car.has_gull_wing_doors? # true
-puts best_car.has_windows? # true
+assert_false best_car.has_moon_roof?
+assert_true best_car.has_flux_capacitor?
+assert_true best_car.has_gull_wing_doors?
+assert_true best_car.has_windows?
 
+puts "\n"
+puts "For the Tesla".yellow
 expensive_car = Tesla.new
-puts expensive_car.has_moon_roof? # true
-puts expensive_car.has_flux_capacitor? # false
-puts expensive_car.has_gull_wing_doors? # false
-puts expensive_car.has_windows? # true
-puts expensive_car.has_turbo? # true
+assert_true expensive_car.has_moon_roof?
+assert_false expensive_car.has_flux_capacitor?
+assert_false expensive_car.has_gull_wing_doors?
+assert_true expensive_car.has_windows?
+assert_true expensive_car.has_turbo?
